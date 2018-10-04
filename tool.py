@@ -12,7 +12,7 @@ from iota.crypto.kerl.conv import convertToBytes, convertToTrits, \
 from config import SEED, FULLNODE
 from PoW import *
 
-DCURL_PATH = "./deps/dcurl/build/libdcurl.so"
+DCURL_PATH = "./dcurl/build/libdcurl.so"
 TXN_SECURITY_LEVEL = 2
 DEPTH = 7
 MWM = 15
