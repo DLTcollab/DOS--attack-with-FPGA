@@ -1,3 +1,4 @@
 [submodule "dcurl"]
 	path = dcurl
 	url = https://github.com/DLTcollab/dcurl.git
+	branch = dev
