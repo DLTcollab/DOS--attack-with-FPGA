@@ -26,7 +26,7 @@ python3 test.py
 
 It issues transactions to Tangle.
 
-$Tag$ is "YILLKIDATTACK".
+"Tag" is "YILLKIDATTACK".
 
 
 
