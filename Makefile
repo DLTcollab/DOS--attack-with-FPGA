@@ -16,16 +16,6 @@ $(DCURL_LIB): $(DCURL_DIR)
 TESTS += $(wildcard tests/*.py)
 TESTS += $(wildcard tests/tangleid/*.sh)
 
-check: server.py $(DCURL_LIB)
-	@ TMP_PID=`mktemp /tmp/server_pid.XXXXXX`; \
-	echo "Running test suite..." ; \
-	( python $^ & echo $$! > $${TMP_PID} ); \
-	sleep 3 ; \
-	for i in $(TESTS); do \
-	    ( echo "\n\n==[ $$i ]==\n"; $$i || kill -9 `cat $${TMP_PID}` ) \
-	done ; \
-	kill -9 `cat $${TMP_PID}`
-	@$(RM) $${TMP_PID}
 
 clean:
 	find . -name '*.pyc' | xargs $(RM)
