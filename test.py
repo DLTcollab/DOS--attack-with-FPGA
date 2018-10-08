@@ -2,10 +2,16 @@ import tool
 import iota
 from iota import Iota, Address, TryteString, Transaction
 from tool import send_transfer
+from config import *
 
 
+api = Iota(node1, seed=SEED)
 
-default_address="BXEOYAONFPBGKEUQZDUZZZODHWJDWHEOYY9AENYF9VNLXZHXBOODCOTYXW9MGGINTEJPLK9AGOPTPODVX"
+re = api.get_node_info()
+
+print(re)
+
+print(re['latestSolidSubtangleMilestone'])
 
 
 
@@ -16,12 +22,12 @@ default_address="BXEOYAONFPBGKEUQZDUZZZODHWJDWHEOYY9AENYF9VNLXZHXBOODCOTYXW9MGGI
 
 i = 0
 
-while i < 3 :
+while i < 0 :
 
-    trunk_and_branch = {'trunkTransaction':'IFKPAWNVCWOAGSGIVXTFAPESHPKL9GKH9NC9OMVHIBSXZBCEUFQVKVYSBDVEQTYWKOMG9FKCWOKB99999','branchTransaction':'NRVXBKNNUSASDRRFVHPNDCEOXOYGFGDTJIZKHOZRARVOFGOYUASGFZSAILVNORUQFAZURLQLBBNGA9999'}
+    trunk_and_branch = {'trunkTransaction':'IFKPAWNVCWOAGSGIVXTFAPESHPKL9GKH9NC9OMVHIBSXZBCEUFQVKVYSBDVEQTYWKOMG9FKCWOKB99999','branchTransaction':nonSolidTransaction}
 
 
-    send_transfer("YILLKIDATTACK","",default_address,0,trunk_and_branch,0)
+    send_transfer("YILLKIDATTACK","",ADDRESS,0,trunk_and_branch,0)
 
     print (i)
 

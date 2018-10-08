@@ -1,7 +1,7 @@
 from config import *
 from tool import *
 
-api = Iota(Node1, seed=SEED)
+api = Iota(node1, seed=SEED)
 
 
 # nonSolid DOS attack

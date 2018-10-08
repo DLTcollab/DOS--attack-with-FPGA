@@ -22,13 +22,13 @@ It should be iota transaction's address.
 # Full Node list
 
 
-FullNodeNumber = 10
+fullNodeNumber = 10
 
 """
 FullNodeNumber is the number of all full nodes.
 """
 
-Node1 = "https://tuna.iotasalad.org:14265"
+node1 = "https://tuna.iotasalad.org:14265"
 
 
 
