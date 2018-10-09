@@ -65,10 +65,11 @@ node[29]= "http://iota1.heidger.eu:14265/"
 
 # attack_init
 
-startMessage = "TESTDOSATTACKSTART"
+startMessage = ""
 
 """
 startMessage is defined by user.
+It is "tag" in transaction.
 """
 
 attackType = "nonSolid"
