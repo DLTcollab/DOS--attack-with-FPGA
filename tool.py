@@ -9,7 +9,7 @@ from iota.crypto.signing import SignatureFragmentGenerator
 from iota.crypto.kerl.conv import convertToBytes, convertToTrits, \
     trits_to_trytes, trytes_to_trits
 
-from config import SEED, Node1
+from config import *
 from PoW import *
 
 DCURL_PATH = "./dcurl/build/libdcurl.so"
@@ -17,7 +17,7 @@ TXN_SECURITY_LEVEL = 2
 DEPTH = 7
 MWM = 14
 
-api = Iota(Node1, seed=SEED)
+api = Iota(node[0], seed=SEED)
 
 
 def insert_to_trytes(index_start, index_end, str_insert, trytes):
