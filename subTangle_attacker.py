@@ -18,17 +18,14 @@ print("Selected full node:" + fullNode)
 
 attackStartTag = api.find_transactions(tags=[startMessage])
 
-print(attackStartTag)
-print(attackStartTag['hashes'])
 
-while str(attackStartTag['hashes']) == "":
+while attackStartTag['hashes'] == []:
     attackStartTag = api.find_transactions(tags=[startMessage])
     print(attackStartTag)
 
 
-
 # issue subTangle transaction
 
-
+#tipSet = api.find_transactions()
 
 
