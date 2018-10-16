@@ -173,3 +173,10 @@ def get_txn_msg(data):
         return ""
 
     return message
+
+
+def getTips(node,hash_list):
+
+    """
+
+    """
