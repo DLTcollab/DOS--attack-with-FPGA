@@ -175,8 +175,34 @@ def get_txn_msg(data):
     return message
 
 
-def getTips(node,hash_list):
+def getReferenceTips(node,currentList):
 
     """
 
     """
+
+    tipSet = []
+
+    while currentList != []:
+
+        print("currentList:")
+        print(currentList)
+
+        for transactionHash in currentList:
+
+            print("transactionHash:")
+            print(transactionHash)
+
+            checkResult = node.find_transactions(approvees=[transactionHash])
+
+
+            print("checkResult:")
+            print(checkResult)
+
+            if checkResult['hashes'] == []:
+
+                tipSet.append(transactionHash)
+
+        currentList = node.find_transactions(approvees=currentList)['hashes']
+
+    return tipSet
