@@ -1,36 +1,42 @@
 import tool
 import iota
-from iota import Iota, Address, TryteString, Transaction
-from tool import send_transfer
+from iota import *
+from tool import *
 from config import *
 
 
-api = Iota(node1, seed=SEED)
 
-re = api.get_node_info()
-
-print(re)
-
-print(re['latestSolidSubtangleMilestone'])
+api = Iota(node[0], seed=SEED)
 
 
+t = {'trunkTransaction':"EMPLEGXUPQJKUFAOJSSBVRJR9ATRGMBZCXQQQ9PESQST9HXHPIWMLCYDWSNLULXNMUYUKHKMDTJB99999",'branchTransaction':"EMPLEGXUPQJKUFAOJSSBVRJR9ATRGMBZCXQQQ9PESQST9HXHPIWMLCYDWSNLULXNMUYUKHKMDTJB99999"}
+
+send_transfer("","",ADDRESS,0,t,0)
+
+tips = getReferenceTips(api,["MQQXPGHUQXHITYHTMYWPYXGKNAEUGZP9BFISJSF9UESABUYTIWUJQXWZYHPLSBKDEWIUVTA9XVGC99999"]) 
+
+
+if (len(tips)%2) == 1:
+    rTips = {'trunkTransaction':tips[0],'branchTransaction':tips[0]}
+    send_transfer("","",ADDRESS,0,rTips,0)
+    tip_number = len(tips)
+    i = 1
+    while i < tip_number :
+        trunk_and_branch = {'trunkTransaction':tips[i],'branchTransaction':tips[i+1]}
+        send_transfer("","",ADDRESS,0,trunk_and_branch,0)
+        i = i + 2
+
+
+if (len(tips)%2) == 0:
+    tip_number = len(tips)
+    i = 0
+    while i < tip_number :
+        trunk_and_branch = {'trunkTransaction':tips[i],'branchTransaction':tips[i+1]}
+        send_transfer("","",ADDRESS,0,trunk_and_branch,0)
+        i = i + 2
 
 
 
 
-
-
-i = 0
-
-while i < 0 :
-
-    trunk_and_branch = {'trunkTransaction':'IFKPAWNVCWOAGSGIVXTFAPESHPKL9GKH9NC9OMVHIBSXZBCEUFQVKVYSBDVEQTYWKOMG9FKCWOKB99999','branchTransaction':nonSolidTransaction}
-
-
-    send_transfer("YILLKIDATTACK","",ADDRESS,0,trunk_and_branch,0)
-
-    print (i)
-
-    i = i + 1
 
 
