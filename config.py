@@ -18,6 +18,12 @@ ADDRESS is defined by user.
 It should be iota transaction's address.
 """
 
+subTangleTag = ""
+
+"""
+Mark subTangle's transaction.
+"""
+
 
 # Full Node list
 
@@ -65,7 +71,7 @@ node[29]= "http://iota1.heidger.eu:14265/"
 
 # attack_init
 
-startMessage = ""
+startMessage = "TESTATINIT"
 
 """
 startMessage is defined by user.
@@ -114,7 +120,7 @@ If attackType is conflictTransaction , user should define the conflict transacti
 
 # attack_end
 
-endMessage = "TESTDOSATTACKEND"
+endMessage = "OKJUI"
 
 """
 endMessage is defined by user.
