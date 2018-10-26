@@ -185,8 +185,6 @@ def getReferenceTips(node,currentList):
 
     while currentList != []:
 
-        print("currentList:")
-        print(currentList)
 
         for transactionHash in currentList:
 
