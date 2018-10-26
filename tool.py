@@ -194,8 +194,6 @@ def getReferenceTips(node,currentList):
             checkResult = node.find_transactions(approvees=[transactionHash])
 
 
-            print("checkResult:")
-            print(checkResult)
 
             if checkResult['hashes'] == []:
 
